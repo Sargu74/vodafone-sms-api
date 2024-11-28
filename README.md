@@ -1,14 +1,13 @@
-Vodafone Bulk SMS API
-# Installing Package
+# Vodafone Bulk SMS API
+
+## Installing Package
 
 The recommended way to install is through
 [Composer](https://getcomposer.org/).
 
-```bash
 composer require bellal/vodafone-sms
-```
 
-```
+```php
 <?php
 
 use Bellal\VodafoneSMS\VodafoneAdapter;
@@ -21,7 +20,7 @@ $messageProviderInstance = new VodafoneAdapter([
 ]);
 
 $result = $messageProviderInstance->send([
-	'to' => 'RECIEVER_NUMBER',
-	'text' => 'MESSAGE_BODY',
+    'to' => 'RECIEVER_NUMBER',
+    'text' => 'MESSAGE_BODY',
 ]);
 ```

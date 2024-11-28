@@ -1,16 +1,25 @@
 <?php
-use Bellal\VodafoneSMS\VodafoneAdapter;
 
-require 'vendor/autoload.php';
+declare(strict_types=1);
+
+spl_autoload_register(function ($class) {
+  require __DIR__ . "/src/$class.php";
+});
 
 $message = new VodafoneAdapter([
-	'accountId' => 'ACCOUNT_ID',
-	'password' => 'PASSWORD',
-	'secretKey' => 'SECRET_KEY',
-	'senderName' => 'SENDER_NAME',
+  'accountId' => '914830057',
+  'password' => 'Vod@Fone2021',
+  'secretKey' => '',
+  'senderName' => 'EGAP',
 ]);
 
 $data = $message->send([
-	'to' => 'Mobile number',
-	'text' => 'You message body',
+  'to' => '965079108',
+  'text' => 'Enviado da EGAP,
+    A sua password é:
+    Olha, olha...
+    Funciona! E enviada com a Vodafone através de PHP...
+    Fonix que o gajo já sabe umas coisinhas... :P'
 ]);
+
+echo json_encode($data);
